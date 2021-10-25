@@ -1,9 +1,8 @@
 # navicat remote MySQL connection
-
-26/10/2021 - we updated ntunnel_mysql.php script with [Webcy inc.](https://webcy.ir){:target="_blank"} for remote connect to MySQL or MariaDB database by [Navicat](http://navicat.com/){:target="_blank"}.
+26/10/2021 - we updated ntunnel_mysql.php script with [Webcy inc.](https://webcy.ir) for remote connect to MySQL or MariaDB database by [Navicat](http://navicat.com/).
 ----------
 ### Older version 
-An older version of this script is available at the [@rothkj1022/ntunnel_mysqli](https://github.com/rothkj1022/ntunnel_mysqli){:target="_blank"}. But that version does not support PHP8.
+An older version of this script is available at the [@rothkj1022/ntunnel_mysqli](https://github.com/rothkj1022/ntunnel_mysqli). But that version does not support PHP8.
 
 **We updated it and it is now available for PHP8 in [@SeyedAliKhalili/navicat_remote_connection](https://github.com/SeyedAliKhalili/navicat_remote_connection/).**
 
