@@ -1,14 +1,20 @@
-# NOTICE
-*11/6/2017 - It is no longer recommended to use this script, now that Navicat ships an updated ntunnel_mysql.php script with Navicat for MySQL 12+.  To get the newer script, follow [these instructions](https://help.navicat.com/hc/en-us/articles/218283457-Where-can-i-get-the-HTTP-tunnel-script-file-).*
+# navicat remote MySQL connection
 
----
+26/10/2021 - we updated ntunnel_mysql.php script with [Webcy inc.](https://webcy.ir) for remote connect to MySQL or MariaDB database by [Navicat](http://navicat.com/).
+----------
+### Older version 
+An older version of this script is available at the [@rothkj1022/ntunnel_mysqli](https://github.com/rothkj1022/ntunnel_mysqli). But that version does not support PHP8.
 
-# ntunnel_mysqli
+**We updated it and it is now available for PHP8 in [@SeyedAliKhalili/navicat_remote_connection](https://github.com/SeyedAliKhalili/navicat_remote_connection/).**
 
-This is an updated tunnel script for connecting to MySQL and MariaDB databases with Navicat for MySQL via mysqli.  The ntunnel_mysql.php script that comes with current versions of Navicat (as of 10/18/2016) will not work with PHP7, as procedural mysql functions have been deprecated.
+----------
+
+# Remote MySQL
+If you are using a shared host and the remoteSQL is blocked, you will need this script to access the database through navicat.
+Both versions Navicat Premium 15 and Navicat 15 for MySQL support this script.
 
 ## About Tunneling
-HTTP Tunneling is a method for connecting to a server that uses the same protocol (http://) and the same port (port 80) as a webserver does. It is used while your ISPs do not allow direct connections, but allows establishing HTTP connections.
+HTTP Tunneling is a method for connecting to a server that uses the same protocol (http(s)://) as a webserver does. It is used while your ISPs do not allow direct connections to database, but allows establishing HTTP connections.
 
 ## Uploading the Tunneling Script
 
@@ -18,8 +24,8 @@ To set up an HTTP tunnel, first upload the ntunnel_mysqli.php script to your web
 
 The following instruction guides you through the process of configuring a HTTP connection.
 
-1. Select the HTTP tab and enable **Use HTTP Tunnel**.
-2. Enter URL of the tunneling script, e.g. *http://www.navicat.com/ntunnel_mysqli.php* .
+1. Select the HTTP tab in Navicat and enable **Use HTTP Tunnel**.
+2. Enter URL of the tunneling script, e.g. *http://www.example.com/ntunnel_mysqli.php* .
 3. If your server installed a Web Application Firewall, you can check the **Encode outgoing query with base64** option.
 4. If the tunneling script is hosted in a password protected server or you have to access internet over a proxy server, you can provide the required authentication details in **Authentication** or **Proxy** tab.
 5. Navicat host name at the General settings page should be set relatively to the HTTP server which provided by your database hosting company.
