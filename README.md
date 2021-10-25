@@ -3,8 +3,8 @@
 ----------
 ### Older version 
 An older version of this script is available at the [@rothkj1022/ntunnel_mysqli](https://github.com/rothkj1022/ntunnel_mysqli). But that version does not support PHP8.
-
-**We updated it and it is now available for PHP8 in [@SeyedAliKhalili/navicat_remote_connection](https://github.com/SeyedAliKhalili/navicat_remote_connection/).**
+### New version 
+**We updated it and it is now available for PHP8 in [@SeyedAliKhalili/navicat_remote_connection](https://github.com/SeyedAliKhalili/navicat_remote_MySQL/).**
 
 ----------
 
