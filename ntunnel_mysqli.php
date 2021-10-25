@@ -13,14 +13,14 @@
 *
 */
 
-define('DEBUG_MODE', FALSE);
+define('DEBUG_MODE', true);
 
 //set allowTestMenu to false to disable System/Server test page
 $allowTestMenu = true;
 $testMenu = false;
 
 if (DEBUG_MODE) {
-	//trigger_error("Custom user notice", E_USER_NOTICE);
+//	trigger_error("Custom user notice", E_USER_NOTICE);
 	error_log('POST Array: '.print_r($_POST, true));
 	error_reporting(E_ALL);
 	set_time_limit(5);
@@ -94,6 +94,7 @@ function EchoConnInfo($conn)
 	if (DEBUG_MODE) {
 		error_log('EchoConnInfo (mysqli_get_server_info($conn)): '.mysqli_get_server_info($conn));
 	}
+
 	echo $str;
 }
 
@@ -195,7 +196,7 @@ if (!isset($_POST["actn"]) || !isset($_POST["host"]) || !isset($_POST["port"]) |
 }
 
 if (!$testMenu){
-	if ($_POST["encodeBase64"] == '1') {
+	if (@$_POST["encodeBase64"] == '1') {
 		for($i=0;$i<count($_POST["q"]);$i++)
 			$_POST["q"][$i] = base64_decode($_POST["q"][$i]);
 	}
@@ -220,13 +221,13 @@ if (!$testMenu){
 	if($errno_c > 0) {
 		echo GetBlock(mysqli_error($conn));
 	} elseif($_POST["actn"] == "C") {
+//////////////////////////
 		EchoConnInfo($conn);
 	} elseif($_POST["actn"] == "Q") {
 		for($i=0;$i<count($_POST["q"]);$i++) {
 			$query = $_POST["q"][$i];
 			if($query == "") continue;
-			if(get_magic_quotes_gpc())
-				$query = stripslashes($query);
+			$query = stripslashes($query);
 			$resSet = false;
 			$res = mysqli_query($conn, $query);
 			$errno = mysqli_errno($conn);
